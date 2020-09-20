@@ -13,7 +13,7 @@ type Gnode struct {
 
 //AddEdge inserts an edge from n
 func (g *Graph) AddEdge(u, v int) bool {
-	if n, ok := g.nodes[u]; ok {
+	if n, ok := g.Nodes[u]; ok {
 		n = append(n, v)
 		return true
 	}
