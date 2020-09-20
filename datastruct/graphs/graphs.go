@@ -1,9 +1,8 @@
-
 package graphs
 
 //Graph represents a graph of nodes and edges
 type Graph struct {
-	nodes map[int][]int
+	Nodes map[int][]int
 }
 
 //Gnode represents graph node
