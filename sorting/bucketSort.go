@@ -1,7 +1,6 @@
 package sorting
 
 import (
-	"fmt"
 	"sort"
 )
 
@@ -13,17 +12,13 @@ func BucketSort(a []float64) []float64 {
 		index := int(10 * a[i])
 		buckets[index] = append(buckets[index], a[i])
 	}
-	for i := 0; i < 10; i++ {
-		//because we are not using linked list, we need to sort after appending the elements
-		sort.Float64s(buckets[i])
-		fmt.Println(buckets[i])
-	}
 
 	output := []float64{}
 	for i := 0; i < 10; i++ {
-		for _, e := range buckets[i] {
-			output = append(output, e)
-		}
+		//because we are not using linked list, we need to sort after appending the elements
+		sort.Float64s(buckets[i])
+		output = append(output, buckets[i]...)
 	}
+
 	return output
 }
